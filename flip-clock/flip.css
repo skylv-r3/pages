@@ -1,0 +1,162 @@
+html, body{
+  width: 100%;
+  height: 100%;
+}
+.flip{
+  font-size: 20em;
+  font-family: 'Roboto Mono', Consolas, monospace;
+  line-height: 1em;
+  position: relative;
+  height: 1em;
+  transform: rotateY(-0.01turn);
+  transform-style: preserve-3d;
+  display: inline-block;
+  margin-right: 0.1em;
+}
+.flip .dummy{
+  position: relative;
+  overflow: hidden;
+  height: 0px;
+}
+.flip .n > *{
+  position: absolute;
+  height: 49%;
+  overflow-y: hidden;
+  color: #efefef;
+  background-color: #292929;
+  border: solid 1px black;
+  border-radius: 5%;
+
+  backface-visibility: hidden;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+.flip .n .top{
+  transform-origin: 0 100%;
+}
+.flip .n. top div{
+  top: -0.01em;
+}
+.flip .n .bottom{
+  top: 0.51em;
+  transform-origin: 0 0%;
+}
+.flip .n .bottom div{
+  position: relative;
+  top: -0.50em;
+}
+.flip .n .top{
+  animation-name: flip-top;
+}
+.flip .n .bottom{
+  animation-name: flip-bottom;
+}
+.flip .n .top.do{
+  animation-name: do-flip-top;
+  animation-name: do-flip-top;
+  animation-duration: 0.5s;
+}
+.flip .n .bottom.do{
+  animation-name: do-flip-bottom;
+  animation-duration: 0.5s;
+}
+.flip .n.do-first ~ .n > .do:not(.do-first){
+  opacity: 0;
+}
+
+@keyframes flip-top{
+  from{
+    transform: translateY(1%) translateZ(0em) rotateX(-0.5turn);
+    transform-origin: 0 110%;
+  }
+  10%{
+    transform: translateY(0%) translateZ(0em) rotateX(-0.5turn);
+  }
+  25%{
+    transform: translateY(3%) translateZ(-0.1em) rotateX(-0.5turn);
+  }
+  40%{
+    transform: translateY(0%) translateZ(-0.2em) rotateX(-0.5turn);
+    transform-origin: 0 103%;
+  }
+  80%{
+    transform: translateY(0%) translateZ(-0.1em) rotateX(-1turn);
+    transform-origin: 0 100%;
+  }
+  90%{
+    transform: translateY(0%) translateZ(-0.01em) rotateX(-1turn);
+    transform-origin: 0 100%;
+  }
+  to{
+    transform: translateY(1%) translateZ(0em) rotateX(-1turn);
+    transform-origin: 0 105%;
+  }
+}
+
+@keyframes do-flip-top{
+  from{
+    transform: translateY(1%) translateZ(0em) rotateX(-0turn);
+    transform-origin: 0 105%;
+  }
+  20%{
+    transform: translateY(1%) translateZ(0em) rotateX(-0turn);
+    transform-origin: 0 105%;
+  }
+  80%{
+    transform: translateY(1%) translateZ(0em) rotateX(-0.5turn);
+    transform-origin: 0 110%;
+  }
+  to{
+    transform: translateY(1%) translateZ(0em) rotateX(-0.5turn);
+    transform-origin: 0 110%;
+  }
+}
+
+@keyframes flip-bottom{
+  from{
+    transform: translateY(-1%) translateZ(0em) rotateX(0turn);
+    transform-origin: 0 -10%;
+  }
+  10%{
+    transform: translateY(0%) translateZ(-0.01em) rotateX(0turn);
+  }
+  25%{
+    transform: translateY(3%) translateZ(-0.1em) rotateX(0turn);
+  }
+  40%{
+    transform: translateY(0%) translateZ(-0.2em) rotateX(0turn);
+    transform-origin: 0 -3%;
+  }
+  80%{
+    transform: translateY(0%) translateZ(-0.1em) rotateX(-0.5turn);
+    transform-origin: 0 0%;
+  }
+  90%{
+    transform: translateY(0%) translateZ(-0.01em)  rotateX(-0.5turn);
+    transform-origin: 0 0%;
+  }
+  to{
+    transform: translateY(-1%) translateZ(0em)  rotateX(-0.5turn);
+    transform-origin: 0 -5%;
+  }
+}
+@keyframes do-flip-bottom{
+  from{
+    transform: translateY(-1%) translateZ(0em)  rotateX(0.5turn);
+    transform-origin: 0 -5%;
+  }
+  20%{
+    transform: translateY(-1%) translateZ(0em)  rotateX(0.5turn);
+    transform-origin: 0 -5%;
+  }
+  80%{
+    transform: translateY(-1%) translateZ(0em) rotateX(0turn);
+    transform-origin: 0 -10%;
+  }
+  to{
+    transform: translateY(-1%) translateZ(0em) rotateX(0turn);
+    transform-origin: 0 -10%;
+  }
+}
